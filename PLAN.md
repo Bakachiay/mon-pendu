@@ -26,6 +26,14 @@ Concepts: variables, arrays, `Random`, `while`, `if`, `string`, `char`, `foreach
 7. [ ] **End of game**: win/lose message + reveal the word.
 8. [ ] **Replay** (optional, last).
 
+## Project structure and unit tests
+- [x] Solution `MonPendu.slnx` with 3 projects, each in its own folder:
+  - `MonPendu/`: console app (display and input only).
+  - `MonPendu.Core/`: class library (game logic, testable without the console), e.g. `Mots.cs`.
+  - `MonPendu.Tests/`: xUnit tests, referencing `MonPendu.Core`.
+- [x] First tests (`MotsTests.cs`): word list initialized (not empty, a-z only, no duplicates), drawn word belongs to the list, several different words over 100 draws.
+- Rule: each new step puts its logic in `MonPendu.Core` and comes with its tests; run `dotnet test` before committing.
+
 ## Working rules
 - All conversations in French; this file is in English.
 - Code commented for a beginner (explain the why).

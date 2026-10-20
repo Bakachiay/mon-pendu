@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MonPendu.Core/MonPendu.Core.csproj" />
+  <Project Path="MonPendu.Tests/MonPendu.Tests.csproj" />
+  <Project Path="MonPendu/MonPendu.csproj" />
+</Solution>
