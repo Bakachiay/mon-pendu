@@ -33,7 +33,7 @@ Concepts: variables, arrays, `Random`, `while`, `if`, `string`, `char`, `foreach
   - `MonPendu.Core/`: class library (game logic, testable without the console), e.g. `Mots.cs`.
   - `MonPendu.Tests/`: xUnit tests, referencing `MonPendu.Core`.
 - [x] First tests (`MotsTests.cs`): word list initialized (not empty, a-z only, no duplicates), drawn word belongs to the list, several different words over 100 draws.
-- Rule: each new step puts its logic in `MonPendu.Core` and comes with its tests; run `dotnet test` before committing.
+- Rule: each new step puts its logic in `MonPendu.Core` and comes with its automated tests, **written before the step is validated**. `dotnet test` must be green before validating a step and before committing. If a step cannot be tested automatically, say why.
 
 ## Working rules
 - All conversations in French; this file is in English.
@@ -41,5 +41,5 @@ Concepts: variables, arrays, `Random`, `while`, `if`, `string`, `char`, `foreach
 - Small steps; build and run after each step; no unrequested refactoring.
 
 ## Verification
-`dotnet build` with no errors; `dotnet run` after each step, with the result explained.
+`dotnet build` with no errors; `dotnet test` all green; `dotnet run` after each step, with the result explained.
 

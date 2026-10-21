@@ -33,6 +33,7 @@ Never move on to implementation without my approval, even for a change that seem
 - Start with the simplest version that works, then improve it iteratively.
 - Avoid introducing several new concepts at once.
 - After each step, check that it compiles and runs, and explain the result.
+- **Write automated tests whenever possible** (xUnit, in `MonPendu.Tests`) and run `dotnet test` before considering a step done. Game logic goes in `MonPendu.Core` so it can be tested. Only the parts that cannot be tested automatically (e.g. console input/output) are checked by a manual run.
 - Do not do unrequested refactoring or optimization: stay within the validated scope.
 
 ## Expected cycle
@@ -41,4 +42,4 @@ Never move on to implementation without my approval, even for a change that seem
 2. You propose a **plan in French** with the logic explained.
 3. I **validate** (or adjust).
 4. You implement **step by step**, explaining what you do.
-5. We check the result together before moving on.
+5. We check the result together (build, automated tests, run) before moving on.
