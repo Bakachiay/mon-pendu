@@ -22,4 +22,28 @@ public static class Mots
         int indice = random.Next(Liste.Length);
         return Liste[indice];
     }
+
+    // Indique si un mot est utilisable dans le jeu : non vide et uniquement des lettres a-z
+    // (minuscules, sans accent). Renvoie true (vrai) ou false (faux).
+    // Sert à vérifier un mot imposé par le développeur pour les tests.
+    public static bool EstValide(string mot)
+    {
+        // Un mot vide ne peut pas être deviné.
+        if (string.IsNullOrEmpty(mot))
+        {
+            return false;
+        }
+
+        foreach (char lettre in mot)
+        {
+            // Un seul caractère interdit suffit pour refuser tout le mot.
+            if (lettre < 'a' || lettre > 'z')
+            {
+                return false;
+            }
+        }
+
+        // Aucun caractère interdit trouvé : le mot est valide.
+        return true;
+    }
 }

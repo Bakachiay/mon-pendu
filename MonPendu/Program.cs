@@ -7,9 +7,28 @@ Console.WriteLine("=== MonPendu ===");
 // Random est un "générateur de nombres aléatoires". On en crée un avec new.
 Random random = new Random();
 
-// La logique du tirage vit maintenant dans la bibliothèque (MonPendu.Core),
-// ce qui permet de la tester sans lancer le jeu.
-string motSecret = Mots.TirerMot(random);
+// "args" contient les arguments donnés au lancement du programme (un tableau de string).
+// Exemple : dotnet run --project MonPendu -- soleil   ->   args[0] vaut "soleil".
+// Cela permet d'imposer le mot secret pour tester sans avoir à le deviner.
+string motSecret;
+
+if (args.Length > 0 && Mots.EstValide(args[0]))
+{
+    // Un mot valide a été fourni : on l'utilise.
+    motSecret = args[0];
+}
+else
+{
+    if (args.Length > 0)
+    {
+        // Un argument a été fourni mais il est refusé : on prévient au lieu d'échouer en silence.
+        Console.WriteLine("Mot imposé invalide (minuscules a-z uniquement) : tirage au hasard.");
+    }
+
+    // La logique du tirage vit dans la bibliothèque (MonPendu.Core),
+    // ce qui permet de la tester sans lancer le jeu.
+    motSecret = Mots.TirerMot(random);
+}
 
 // TEMPORAIRE : affichage pour vérifier que ça marche. À supprimer plus tard,
 // sinon le joueur verrait la réponse !

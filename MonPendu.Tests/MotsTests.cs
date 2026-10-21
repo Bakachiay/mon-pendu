@@ -67,4 +67,27 @@ public class MotsTests
         // Ne voir qu'un seul mot sur 100 tirages est quasiment impossible (1 chance sur 10^99).
         Assert.True(motsTires.Count > 1, "Le tirage renvoie toujours le même mot.");
     }
+
+    [Fact]
+    public void EstValide_MotEnMinuscules_RenvoieTrue()
+    {
+        Assert.True(Mots.EstValide("soleil"));
+    }
+
+    [Fact]
+    public void EstValide_MotVide_RenvoieFalse()
+    {
+        Assert.False(Mots.EstValide(""));
+    }
+
+    // [Theory] + [InlineData] : le même test est lancé une fois pour chaque valeur listée.
+    [Theory]
+    [InlineData("été")]      // accent
+    [InlineData("Soleil")]   // majuscule
+    [InlineData("abc123")]   // chiffres
+    [InlineData("deux mots")] // espace
+    public void EstValide_MotAvecCaractereInterdit_RenvoieFalse(string mot)
+    {
+        Assert.False(Mots.EstValide(mot));
+    }
 }

@@ -19,6 +19,7 @@ Concepts: variables, arrays, `Random`, `while`, `if`, `string`, `char`, `foreach
 ## Implementation steps (one at a time, validated each time)
 1. [x] **Secret word**: array of `string` + `Random`; print the word (temporary test).
 2. [x] **Masked word**: display `_ _ _ _` based on found letters (`foreach` loop).
+2b. [x] **Forced secret word (for testing)**: `dotnet run --project MonPendu -- soleil` uses `soleil` as the secret word (validated by `Mots.EstValide`); without argument, random draw.
 3. [ ] **Input**: `Console.ReadLine()`, check a single letter a-z, lowercase.
 4. [ ] **Already tried letters**: reject a letter already played.
 5. [ ] **Letter check**: correct -> revealed; wrong -> lose one life.
