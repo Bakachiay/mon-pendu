@@ -14,3 +14,10 @@ string motSecret = Mots.TirerMot(random);
 // TEMPORAIRE : affichage pour vérifier que ça marche. À supprimer plus tard,
 // sinon le joueur verrait la réponse !
 Console.WriteLine("(test) Mot secret : " + motSecret);
+
+// TEMPORAIRE : lettres "trouvées" écrites en dur pour voir le masque en action.
+// À l'étape suivante, elles viendront des saisies du joueur.
+string lettresTrouvees = "eo";
+
+// Affiche par exemple : _ _ _ _ _ e _ _ o
+Console.WriteLine("Mot à deviner : " + MotMasque.Construire(motSecret, lettresTrouvees));

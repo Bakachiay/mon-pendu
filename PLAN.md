@@ -18,7 +18,7 @@ Concepts: variables, arrays, `Random`, `while`, `if`, `string`, `char`, `foreach
 
 ## Implementation steps (one at a time, validated each time)
 1. [x] **Secret word**: array of `string` + `Random`; print the word (temporary test).
-2. [ ] **Masked word**: display `_ _ _ _` based on found letters (`foreach` loop).
+2. [x] **Masked word**: display `_ _ _ _` based on found letters (`foreach` loop).
 3. [ ] **Input**: `Console.ReadLine()`, check a single letter a-z, lowercase.
 4. [ ] **Already tried letters**: reject a letter already played.
 5. [ ] **Letter check**: correct -> revealed; wrong -> lose one life.
